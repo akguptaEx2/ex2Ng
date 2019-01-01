@@ -1,0 +1,17 @@
+.card{
+    margin: 0 auto;
+    margin-top:20px;
+    max-width: 24rem;
+    text-align: center;
+    border-color: #9ecaed;
+    box-shadow: 0 0 2rem #9ecaed;
+    .card-header{
+        background:rgba(4, 105, 236, 0.733);
+        color: white;
+    }
+
+    .forgot-password{
+        float: right;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,34 @@
+.topnav{
+    background-color: rgba(4, 105, 236, 0.733);
+    overflow: hidden;
+    border-right: 5px solid darkblue;
+    border-radius: 3px;
+    margin: .5rem;
+    a{
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        transition: background-color 0.5s ease;
+    }
+    a:hover{
+        background-color: rgba(127, 169, 211, 0.966);
+        
+    }
+    a.logo {
+        background-color: rgb(32, 40, 151);
+        color: white;
+        font-weight: bold;
+      }
+    a.active{
+        font-weight: semi-bold;
+        color: white;   
+    }
+      
+      /* Right-aligned section inside the top navigation */
+      .topnav-right {
+        float: right;
+      }
+}

@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Sign In</h4>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+      <div class="form-group">
+        <input type="email" formControlName="email"  class="form-control" placeholder="donjoe@awsomeness.com">
+      </div>
+      <div class="form-group">
+        <input type="password" formControlName="password"  class="form-control">
+      </div>
+      <button class="form-button btn btn-primary">Login</button>
+    </form>
+  </div>
+  <div class="card-footer">
+    <a href="#forgotPassword" class="forgot-password">Don't remember your password? Reset it!</a>
+  </div>
+</div>
+{{loginForm.value|json}}
+    {{loginForm.valid|json}}
