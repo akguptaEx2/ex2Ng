@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-users-profile',
+  selector: 'user-profile',
   templateUrl: './users-profile.component.html',
   styleUrls: ['./users-profile.component.scss']
 })

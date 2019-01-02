@@ -11,7 +11,15 @@ export class AuthService {
   apiUrl:string = 'http://localhost:3000/api/users'
   constructor(private http: HttpClient) { }
   isLoggedIn(){
-    return this.authToken != null;
+    if(this.authToken)
+      return true;
+    let token =  localStorage.getItem('x-auth');
+    if(!token)
+      return false;
+    let user = JSON.parse(localStorage.getItem('x-user'));
+    this.authToken = token;
+    this.user = user;
+    return true;
   }
   login(user){
     let headers = new HttpHeaders();

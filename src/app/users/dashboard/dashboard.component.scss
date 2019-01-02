@@ -1,0 +1,57 @@
+.card{
+    margin-top:20px;
+    max-width: 24rem;
+    text-align: center;
+    margin-left:.5rem;
+    position: relative;
+    .card-head{
+        border-radius: 50%;
+        display: flex;
+        width: 3rem;
+        height: 3rem;
+        margin: 0 auto;
+        left: calc(50% - 1.5rem);
+        position: absolute;
+        top:-1.5rem;
+        i{
+            margin: auto;
+            font-size: 1.5rem;
+        }
+    }
+   
+}
+.border-blue{
+    border-bottom: .2rem solid blue;
+}
+.border-pink{
+    border-bottom: .2rem solid darkmagenta;
+}
+
+.card:hover{
+    z-index: 1;
+    transform: scale(1.06);
+    transition: transform .2s ease;
+
+}
+.shadow-blue:hover{
+    box-shadow: 0 0 1.2rem blue;
+    
+    .card-head{
+        box-shadow: 0px -3px 12px -1px blue;;
+    }
+}
+.shadow-pink:hover{
+    box-shadow: 0 0 1.2rem darkmagenta;
+    
+    .card-head{
+        box-shadow: 0px -3px 12px -1px darkmagenta;;
+    }
+}
+.head-blue{
+    background: blue;
+    color: white;
+}
+.head-pink{
+    background: darkmagenta;
+    color: white;
+}
