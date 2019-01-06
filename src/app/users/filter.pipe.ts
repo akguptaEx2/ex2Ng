@@ -16,7 +16,9 @@ export class FilterPipe implements PipeTransform {
     return users.filter(user=>
       user.first_name.toLowerCase().includes(searchText) ||
       (user.last_name && user.last_name.toLowerCase().includes(searchText))||
-      user.email.includes(searchText)
+      user.email.includes(searchText)||
+      user.role.toLowerCase().includes(searchText)||
+      (user.employee_code && user.employee_code.toString().includes(searchText))
     );
   }
 
