@@ -2,8 +2,9 @@
     margin-top:20px;
     max-width: 24rem;
     text-align: center;
-    margin-left:.5rem;
+    margin-left:1rem;
     position: relative;
+    display: flex;
     .card-head{
         border-radius: 50%;
         display: flex;
@@ -18,7 +19,10 @@
             font-size: 1.5rem;
         }
     }
-   
+    .users{
+        font-weight: 600;
+        margin-top: 1rem;
+    }
 }
 .border-blue{
     border-bottom: .2rem solid blue;
@@ -31,20 +35,23 @@
     z-index: 1;
     transform: scale(1.06);
     transition: transform .2s ease;
-
+ 
 }
 .shadow-blue:hover{
     box-shadow: 0 0 1.2rem blue;
-    
+    transition: box-shadow .2s ease;
     .card-head{
-        box-shadow: 0px -3px 12px -1px blue;;
+        box-shadow: 0px -3px 12px -1px blue;
+        transition: box-shadow .2s ease;
     }
 }
 .shadow-pink:hover{
     box-shadow: 0 0 1.2rem darkmagenta;
+    transition: box-shadow .2s ease;
     
     .card-head{
-        box-shadow: 0px -3px 12px -1px darkmagenta;;
+        box-shadow: 0px -3px 12px -1px darkmagenta;
+        transition: box-shadow .2s ease;
     }
 }
 .head-blue{

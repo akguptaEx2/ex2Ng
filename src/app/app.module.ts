@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import {LoginComponent, DashboardComponent,UsersProfileComponent, UsersListComponent} from './users';
 import { AuthService } from './users/services/auth.service';
+import { UsersService } from './users/services/users.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,7 @@ import { AuthService } from './users/services/auth.service';
     ReactiveFormsModule,
     StoreModule.forRoot({})
   ],
-  providers: [AuthService],
+  providers: [AuthService,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

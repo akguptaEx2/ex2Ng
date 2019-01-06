@@ -1,7 +1,7 @@
 <div class="topnav">
-    <a class="logo" href="#dashboard">EX2</a>
+    <a class="logo" href="#home">EX2</a>
     <a *ngIf="isLoggedIn()" [routerLink]="['/dashboard']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
-    <a *ngIf="isLoggedIn()" href="#Users">Users</a>
+    <a *ngIf="isLoggedIn()" [routerLink]="['/users']" routerLinkActive="active" >Users</a>
     <a *ngIf="isLoggedIn()" href="#Items">Items</a>
     <div class="topnav-right">  
       <a *ngIf="!isLoggedIn()"  [routerLink]="[ '/login' ]" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a>

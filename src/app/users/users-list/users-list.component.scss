@@ -1,0 +1,18 @@
+.users-list{
+box-shadow: 1px 1px 10px 1px rgba(4, 104, 236, 0.973);
+
+padding: 0;
+}
+table{
+    tr:last-child th:first-child {
+        border-bottom-left-radius: 10px;
+    }
+    
+    tr:last-child th:last-child {
+        border-bottom-right-radius: 10px;
+    }
+    .header{
+        background:rgba(4, 105, 236, 0.733);
+        color: white;
+    }
+}

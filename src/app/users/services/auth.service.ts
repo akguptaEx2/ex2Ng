@@ -2,15 +2,19 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpErrorResponse} from '@angular/common/http';
 import {map, catchError} from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { User } from '../user.model';
+import { apiEndpoints } from './api.config';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   authToken: string;
-  user:{[data:string]:any}
-  apiUrl:string = 'http://localhost:3000/api/users'
-  constructor(private http: HttpClient) { }
-  isLoggedIn(){
+  user:User;
+  apiUrl:string;
+  constructor(private http: HttpClient) { 
+    this.apiUrl = apiEndpoints.apiUsersUrl;
+  }
+  isLoggedIn():boolean{
     if(this.authToken)
       return true;
     let token =  localStorage.getItem('x-auth');
@@ -21,6 +25,17 @@ export class AuthService {
     this.user = user;
     return true;
   }
+
+  get role():string|null{
+    if(!this.user)
+      return null;
+    return this.user.role;
+  }
+
+  isAdmin():boolean{
+    return this.role === 'admin';
+  }
+
   login(user){
     let headers = new HttpHeaders();
     headers.append('Content-Type','application/json');
@@ -35,10 +50,10 @@ export class AuthService {
     return logout$;
   }
 
-  set Token(token){
+  set Token(token: string){
     this.authToken = token;
   }
-  set User(user){
+  set User(user:User){
     this.user = user;
   }
   storeTokenInfo(){
@@ -55,6 +70,6 @@ export class AuthService {
 }
 export interface LoginResponse{
   success:boolean;
-  data:{};
-  auth_token:string;
+  data?:User;
+  auth_token?:string;
 }
