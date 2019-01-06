@@ -4,12 +4,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {StoreModule} from '@ngrx/store';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchComponent } from './search/search.component';
 import {LoginComponent, DashboardComponent,UsersProfileComponent, UsersListComponent} from './users';
 import { AuthService } from './users/services/auth.service';
 import { UsersService } from './users/services/users.service';
+import { FilterPipe } from './users/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +19,14 @@ import { UsersService } from './users/services/users.service';
     DashboardComponent,
     UsersListComponent,
     UsersProfileComponent,
-    SearchComponent
+    SearchComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({})
   ],
